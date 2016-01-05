@@ -5,8 +5,9 @@ var usersController = require('../controllers/usersController');
 
 router.route('/users')
   .post(usersController.newUser)
-
-// router.route('/users/id')
-//   .get(usersController.usersShow)
+  .get(usersController.showUser)
+  
+router.route('/users/id')
+  .get(usersController.showUser)
 
 module.exports = router
