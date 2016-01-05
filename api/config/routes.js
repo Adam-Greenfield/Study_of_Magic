@@ -3,6 +3,6 @@ var router = express.Router();
 
 router.route('/users/id')
   .get(usersController.usersShow)
-  .post(usersController.usersPost)
+  .post(usersController.newUser)
 
 module.exports = router
