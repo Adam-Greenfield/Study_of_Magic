@@ -12,9 +12,9 @@ var User= require('../models/User.js');
     });
   }
 
-  function showUser(req, res){
+  // function showUser(req, res){
 
-  }
+  // }
 
 module.exports = {
   newUser: newUser

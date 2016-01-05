@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var userSchema = new mongoose.schema({
+var userSchema = new mongoose.Schema({
   local: {
     username: { type: String, unique: true, required: true },
     email: { type: String, unique: true, required: true },
