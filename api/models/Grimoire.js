@@ -7,7 +7,8 @@ var grimSchema = new mongoose.schema({
   manaCost: { type: String },
   level: { type: Number },
   image: { type: String },
-  difficulty: { type: Number }
+  difficulty: { type: Number },
+  pathway: { type: String }
 });
 
 module.exports = mongoose.model("Grim", grimSchema);
