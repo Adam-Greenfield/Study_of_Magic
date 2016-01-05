@@ -8,8 +8,12 @@ var User= require('../models/User.js');
       if(error)
         res.json({ message: 'Could not create new user because' + err });
   
-        res.json( user: user )
+        res.json({ user: user });
     });
+  }
+
+  function showUser(req, res){
+
   }
 
 module.exports = {

@@ -1,8 +1,12 @@
 var express = require("express");
 var router = express.Router();
 
+var usersController = require('../controllers/usersController');
+
+router.route('/users')
+  .post(usersController.newUser)
+
 router.route('/users/id')
   .get(usersController.usersShow)
-  .post(usersController.newUser)
 
 module.exports = router

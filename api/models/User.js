@@ -1,4 +1,4 @@
-var mongoose = require "mongoose";
+var mongoose = require("mongoose");
 
 var userSchema = new mongoose.schema({
   local: {
@@ -6,17 +6,17 @@ var userSchema = new mongoose.schema({
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     isAdmin: { type: Boolean },
-    characters: {[
+    characters: [{
       character: {
         character_name: { type: String },
         character_image: { type: String },
         mana: { type: Number },
-        grims: {[ type: Number ]},
-        items: {[ type: String ]},
+        grims: [{ type: Number }],
+        items: [{ type: String }],
         state: { type: String },
         isAlive: { type: Boolean }
       }
-    ]}
+    }]
   }
 })
 
