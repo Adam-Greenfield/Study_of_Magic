@@ -3,7 +3,7 @@ var User = require('../models/User.js');
   function newUser(req, res){
     console.log('in new user');
 
-    var user = new User(req.body)
+    var user = new User(req.body.user)
   
     user.save(function(err){
       if(err){
