@@ -1,8 +1,11 @@
-var mongoose = require('mongoose');
-var express = require('express');
+var mongoose       = require('mongoose');
+var express        = require('express');
 var methodOverride = require("method-override");
-var bodyParser = require('body-parser');
-var app = express();
+var bodyParser     = require('body-parser');
+var passport       = require('passport');
+var jwt            = require('jsonwebtoken');
+var expressJWT     = require('express-jwt');
+var app            = express();
 
 
 
