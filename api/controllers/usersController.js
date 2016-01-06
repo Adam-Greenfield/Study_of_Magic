@@ -1,19 +1,19 @@
 var User = require('../models/User.js');
 
-  function newUser(req, res){
-    console.log('in new user');
+  // function newUser(req, res){
+  //   console.log('in new user');
 
-    var user = new User(req.body.user)
+  //   var user = new User(req.body.user)
   
-    user.save(function(err){
-      if(err){
-        console.log('in err'); 
-        res.status(404).json({ message: 'Could not create new user because' + err });
-      }
-      else
-        res.status(200).json({ user: user });
-    });
-  }
+  //   user.save(function(err){
+  //     if(err){
+  //       console.log('in err'); 
+  //       res.status(404).json({ message: 'Could not create new user because' + err });
+  //     }
+  //     else
+  //       res.status(200).json({ user: user });
+  //   });
+  // }
 
   function showUser(req, res){
     var id = req.params.id
@@ -27,6 +27,6 @@ var User = require('../models/User.js');
   }
 
 module.exports = {
-  newUser: newUser,
+  // newUser: newUser,
   showUser: showUser
 }

@@ -6,10 +6,12 @@ var passport       = require('passport');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
-
-
+var config         = require('./config/config');
+var secret         = require('./config/config').secret;
 
 mongoose.connect('mongodb://localhost:27017/magic_api')
+
+require('./config/passport')(passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

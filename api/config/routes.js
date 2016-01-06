@@ -8,8 +8,8 @@ var authenticationsController = require('../controllers/authenticationsControlle
 router.post('/login', authenticationsController.login);
 router.post('/register', authenticationsController.register);
 
-router.route('/users')
-  .post(usersController.newUser)
+// router.route('/users')
+//   .post(usersController.newUser)
 
 router.route('/users/:id')
   .get(usersController.showUser)
