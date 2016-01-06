@@ -8,8 +8,6 @@ var app = express();
 
 mongoose.connect('mongodb://localhost:27017/magic_api')
 
-var routes = require('./config/routes');
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride(function(req, res){
@@ -20,7 +18,15 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
+app.use('/api', expressJWT({ secret: secret })
+  .unless({
+    path: [
+      { url: '/api/login', methods: ['POST'] },
+      { url: '/api/register', methods: ['POST'] }
+    ]
+  }));
 
+var routes = require('./config/routes');
 app.use('/api', routes);
 
 app.listen(3000);
