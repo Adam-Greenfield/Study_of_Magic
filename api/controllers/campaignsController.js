@@ -16,7 +16,7 @@ function campaignShow(req, res){
 
 function campaignsCreate(req, res){
   var campaign = new Campaign({
-    name: req.body.name;
+    name: req.body.name
     //Other shit we think of
   })
 }
