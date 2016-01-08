@@ -1,4 +1,4 @@
-var mongoose = require "mongoose";
+var mongoose = require("mongoose");
 
 var grimSchema = new mongoose.Schema({
   name: { type: String },
