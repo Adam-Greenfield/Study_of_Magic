@@ -32,6 +32,10 @@ campaignSchema.pre("save", function(next){
       if(uniqueAdmin_users.indexOf(admin_users) === -1){
         uniqueAdmin_users.push(admin_users);
       }
+      if(campaign.players.indexOf(admin_users) !== -1){
+        var index = campaign.players.indexOf(admin_users);
+        campaign.players.splice(index, 1);
+      }
     });
     campaign.admin_users = uniqueAdmin_users;
   }
