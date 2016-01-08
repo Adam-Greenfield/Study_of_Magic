@@ -1,0 +1,12 @@
+<section ng-controller="usersController as user">
+  <h3>Login</h3>
+  <form id="login" ng-submit="user.login()">
+    <label for="email">Email</label>
+    <input type="text" name="email" placeholder="Email" ng-model="user.user.email">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Password" ng-model="user.user.password">
+
+    <input type="submit" value="Access">
+  </form>
+</section>
