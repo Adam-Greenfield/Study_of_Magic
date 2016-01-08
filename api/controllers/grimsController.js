@@ -46,6 +46,21 @@ function grimUpdate(req, res){
     if(req.body.pathway) grim.pathway = req.body.pathway
   })
 }
+
+function grimDelete(req, res){
+  Grim.findByIdAndRemove({_id: req.params.id}, function(err){
+   if (err) return res.status(404).json({message: 'Something went wrong.'});
+   res.status(200).json({message: 'Grim has been successfully deleted'});
+  });
+}
+
+module.exports = {
+  grimsIndex: grimsIndex
+  grimsShow: grimsShow
+  grimsCreate: grimsCreate
+  grimsUpdate: grimsUpdate
+  grimsDelete: grimsDelete
+}
 //show all
 //get
 //update
