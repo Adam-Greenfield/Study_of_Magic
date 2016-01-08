@@ -1,3 +1,4 @@
 module.exports = {
-  'secret': 'IhaveASecretLookAtMySecretOhYesWhatASecretBlimey'
+  'secret': 'IhaveASecretLookAtMySecretOhYesWhatASecretBlimey',
+  'database': 'mongodb://localhost:27017/magicAPI'
 };

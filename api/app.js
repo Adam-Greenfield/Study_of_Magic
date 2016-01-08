@@ -2,6 +2,7 @@ var mongoose       = require('mongoose');
 var express        = require('express');
 var methodOverride = require("method-override");
 var bodyParser     = require('body-parser');
+var cors           = require('cors');
 var passport       = require('passport');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
@@ -15,6 +16,9 @@ require('./config/passport')(passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(passport.initialize());
+
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     var method = req.body._method
