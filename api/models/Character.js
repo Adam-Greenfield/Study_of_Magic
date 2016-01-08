@@ -6,7 +6,7 @@ var characterSchema = new mongoose.Schema({
   mana: { type: Number },
   //an array of grim the character has
   grims: [{type: mongoose.Schema.ObjectId, ref: 'Grim'}],
-  campaigns: [{type: mongoose.Schema.ObjectID, ref: 'Campaign'}],
+  campaigns: [{type: mongoose.Schema.ObjectId, ref: 'Campaign'}],
   items: [{ type: String }],
   state: { type: String },
   isAlive: { type: Boolean }
