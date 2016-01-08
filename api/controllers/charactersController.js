@@ -14,3 +14,18 @@ function characterShow(req, res){
   });
 };
 
+function characterCreate(req, res){
+  var character = new Character({
+    character_name: req.body.character_name
+    character_image: req.body.character_image
+  })
+}
+
+function characterUpdate(req, res){
+  Character.findById(req.params.id, function(character){
+    if (err) return res.status(500).json({message: "Something went wrong!"});
+    if (!character) return res.status(404).json({message: 'No character found.'});
+
+    
+  })
+}
