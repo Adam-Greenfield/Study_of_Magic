@@ -6,6 +6,7 @@ var cors           = require('cors');
 var passport       = require('passport');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
+var cookieParser   = require("cookie-parser");
 var app            = express();
 var config         = require('./config/config');
 var secret         = require('./config/config').secret;
@@ -16,6 +17,7 @@ require('./config/passport')(passport);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(cors());
 app.use(passport.initialize());
 
