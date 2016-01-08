@@ -1,8 +1,8 @@
 var express = require("express");
 var router = express.Router();
+var passport = require("passport");
 
 var usersController = require('../controllers/usersController');
-
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
