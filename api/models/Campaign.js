@@ -18,15 +18,19 @@ campaignSchema.pre("save", function(next){
       if(uniquePlayers.indexOf(player) === -1){
         uniquePlayers.push(player);
       }
+      if(campaign.admin_users.indexOf(player) !== -1){
+        var index = campaign.admin_users.indexOf(player);
+        campaign.admin_users.splice(index, 1);
+      }
     });
     campaign.players = uniquePlayers;
   }
 
   if(campaign.isModified("admin_users")){
-    var uniqueAdmin_userss = [];
-    campaign.players.forEach(function(admin_users){
-      if(uniquePlayers.indexOf(admin_users) === -1){
-        uniquePlayers.push(admin_users);
+    var uniqueAdmin_users = [];
+    campaign.admin_users.forEach(function(admin_users){
+      if(uniqueAdmin_users.indexOf(admin_users) === -1){
+        uniqueAdmin_users.push(admin_users);
       }
     });
     campaign.admin_users = uniqueAdmin_users;

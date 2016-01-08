@@ -1,0 +1,1 @@
+var Campaign = require('../models/Campaign.js');

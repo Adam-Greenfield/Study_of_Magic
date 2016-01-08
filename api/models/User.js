@@ -6,7 +6,8 @@ var userSchema = new mongoose.Schema({
     password: { type: String },
     name: { type: String },
     isAdmin: { type: Boolean },
-    characters: [{ type: mongoose.Schema.ObjectId, ref: "Character" }]
+    characters: [{ type: mongoose.Schema.ObjectId, ref: "Character" }],
+    campaigns: [{ type: mongoose.Schema.ObjectId, ref: "Campaign" }]
   }
 });
 

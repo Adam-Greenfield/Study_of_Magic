@@ -4,8 +4,8 @@ var passport = require("passport");
 
 var usersController = require('../controllers/usersController');
 var grimsController = require('../controllers/grimsController');
-var usersController = require('../controllers/usersController');
-var usersController = require('../controllers/usersController');
+var campaignsController = require('../controllers/campaignsController');
+var charactersController = require('../controllers/charactersController');
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
