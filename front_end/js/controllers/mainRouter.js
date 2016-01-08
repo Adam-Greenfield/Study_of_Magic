@@ -2,7 +2,7 @@ angular
   .module('estudiuMagus')
   .config(MainRouter);
 
-function MainRouter($stateProvider, $urlRouterProvider, ROOT){
+function MainRouter($stateProvider, $urlRouterProvider, $locationProvider, ROOT){
   $stateProvider
   .state('login', {
     url: '/login',
@@ -11,5 +11,11 @@ function MainRouter($stateProvider, $urlRouterProvider, ROOT){
   .state('register', {
     url: '/register',
     templateUrl: ROOT + 'partials/register.html'
-  })
+  });
+
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
 }

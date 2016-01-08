@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="estudiuMagus">
 <head>
   <title>Butt Splash</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -9,6 +9,7 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
+  <script type="text/javascript" src="./js/models/user.js"></script>
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="./js/services/tokenService.js"></script>
   <script type="text/javascript" src="./js/controllers/mainRouter.js"></script>
@@ -16,10 +17,14 @@
 </head>
 <body ng-controller="usersController as user">
 <ul>
-  <li ui-sref-active="active" ui-sref="login">log in</li>
-  <li ui-sref-active="active" ui-sref="register">register</li>
+  <li><a ui-sref-active="active" ui-sref="login">log in</a></li>
+  <li><a ui-sref-active="active" ui-sref="register">register</a></li>
   <li>greetings {{ user.user.name }}</li>
 </ul>
   <p>Welcome to Estudius Magus you Mother Fucker</p>
+
+  <div ui-view>
+    
+  </div>
 </body>
 </html>
