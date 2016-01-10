@@ -37,6 +37,13 @@ app.use('/api', expressJWT({ secret: secret })
     ]
   }));
 
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    return res.status(401).json({message: 'Unauthorized request.'});
+  }
+  next();
+});
+
 var routes = require('./config/routes');
 app.use('/api', routes);
 
