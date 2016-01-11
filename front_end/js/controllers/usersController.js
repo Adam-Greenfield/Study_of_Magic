@@ -16,10 +16,12 @@ function usersController(User, TokenService, $location){
     }
   }
   self.login = function(){
+    console.log(self.user);
     User.login(self.user, userLogIn);
 
   }
   self.register = function() {
+    console.log(self.user);
     User.register(self.user, userLogIn);
   }
   self.logOut = function(){
