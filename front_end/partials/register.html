@@ -1,15 +1,15 @@
-<section ng-controller="usersController as user">
+<section>
   <h3>Register</h3>
-  <form id="register" ng-submit="user.register()">
+  <form id="register" ng-submit="users.register()">
 
 <label for="email">Email</label>
-<input type="text" name="email" placeholder="Email" ng-model="user.user.email">
+<input type="text" name="email" placeholder="Email" ng-model="users.user.email">
 
 <label for="name">Name</label>
-<input type="text" name="name" placeholder="Name" ng-model="user.user.name">
+<input type="text" name="name" placeholder="Name" ng-model="users.user.name">
 
 <label for="password">Password</label>
-<input type="text" name="password" placeholder="Password" ng-model="user.user.password">
+<input type="text" name="password" placeholder="Password" ng-model="users.user.password">
 
     <input type="submit" value="Commit">
   </form>
