@@ -7,11 +7,14 @@ function usersController(User, TokenService, $location){
   var self = this
   self.all = [];
   self.user = {};
+  self.userMin = {}
 
   function userLogIn(res){
     var token = res.token ? res.token : null
     if(token){
       self.user = TokenService.getUser();
+      self.userMin = self.user._doc.local
+      console.log(userMin);
       $location.path('/');
     }
   }
@@ -36,6 +39,7 @@ function usersController(User, TokenService, $location){
 
   if(self.isLoggedIn()){
     self.user = TokenService.getUser();
-    console.log(self.user.local);
+    self.userMin = self.user._doc.local;
+    console.log(self.userMin.name);
   }
 }

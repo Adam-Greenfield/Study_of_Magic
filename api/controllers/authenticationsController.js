@@ -5,7 +5,6 @@ var jwt      = require('jsonwebtoken');
 
 function register(req, res, next) {
   var localStrategy = passport.authenticate('local-signup', function(err, user, info) {
-    console.log(err)
     console.log(user)
     if (err) return res.status(500).json({ message: 'Something went wrong!' });
     if (info) return res.status(401).json({ message: info.message });
