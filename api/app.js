@@ -3,11 +3,14 @@ var express        = require('express');
 var methodOverride = require("method-override");
 var bodyParser     = require('body-parser');
 var cors           = require('cors');
+var morgan         = require('morgan');
+var path           = require('path');
 var passport       = require('passport');
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var cookieParser   = require("cookie-parser");
 var app            = express();
+
 var config         = require('./config/config');
 var secret         = require('./config/config').secret;
 
